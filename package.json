@@ -20,7 +20,9 @@
   "homepage": "https://github.com/dr3apap/node-db-challenge#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "helmet": "^3.21.3"
+    "helmet": "^3.21.3",
+    "knex": "^0.20.12",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
