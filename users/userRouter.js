@@ -2,28 +2,30 @@ const express = require("express");
 const db = require("../data/db-config");
 const router = express.Router();
 
-router.get("/", (res, req) => {
+router.get("/", (req, res) => {
   db.select("*")
-    .from("tasks")
-    .then(res => {
-      res.status(200).json();
+    .from("users")
+    .then(user => {
+      res.status(200).json({ return: user });
     })
     .catch(err => {
-      res.status(500).json({ message: "Sorry, can't find task" });
+      res.status(500).json({
+        message: "Sorry no user found",
+      });
     });
 });
 
 router.get("/:id", (req, res) => {});
 
 router.post("/", (req, res) => {
-  db("tasks")
+  db("users")
     .insert(req.body, "id")
     .then(ids => {
       res.status(201).json({ return: ids });
     })
 
     .catch(err => {
-      res.status(500).json({ message: "Can't found task" });
+      res.status(500).json({ message: "Can't found user" });
     });
 });
 
