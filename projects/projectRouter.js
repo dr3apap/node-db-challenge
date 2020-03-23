@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   // const projects =
   db.select("*")
-    .from("project")
+    .from("projects")
 
     .then(rows => {
       res.status(200).json({ data: rows });
@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {});
 
 router.post("/", (req, res) => {
-  db("project")
+  db("projects")
     .insert(req.body, "id")
     .then(ids => {
       res.status(201).json(ids);
@@ -37,6 +37,20 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {});
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+  db("projects")
+    .where({ id: req.params.id })
+    .del()
+    .then(project => {
+      if (project > 0) {
+        res.end();
+      } else {
+        res.status(404).json({ message: "project not found" });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: "sorry can't delete project " });
+    });
+});
 
 module.exports = router;

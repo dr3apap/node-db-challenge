@@ -1,52 +1,54 @@
 exports.seed = async function(knex) {
   const taskData = [
     {
-      user_id: 1,
+      project_id: 1,
 
-      descriptions: "Get a business off the ground ",
-      notes: "Good feeling",
+      description:
+        "Get a group of developer and software engineers to team up and start a developing business",
       completed: false,
     },
     {
-      user_id: 2,
+      project_id: 2,
 
-      descriptions: "Hire an hr Personel to conduct the recruitment",
-      notes: "Let professional handle this",
+      description:
+        "Design anyy native application from scratch, deploy it and make it an open source",
+      notes:
+        "Maybe after lab I will have some free time or muscle out some time soon",
       completed: false,
     },
     {
-      user_id: 3,
+      project_id: 3,
 
-      descriptions: "Good location for business",
-      notes: "Have to be Tech Area ",
+      description: "Find a good reactor and good loan officer",
+      notes: "office have to be around tech area ",
       completed: false,
     },
     {
-      user_id: 4,
+      project_id: 4,
 
-      descriptions: "Galvanize investors",
-      notes: "Social meet up",
+      description: "Get a lawyer to secure a LLC name for the business",
+      notes: "search online",
       completed: false,
     },
     {
-      user_id: 5,
+      project_id: 5,
 
-      descriptions: "Good business lawyer with vision",
-      notes: "That's me",
+      description: "Go to meet up, conferences and online forum",
+      notes: "No idea is bad,No won't kill either",
       completed: false,
     },
     {
-      user_id: 6,
+      project_id: 6,
 
-      descriptions: "Need a bigger space",
-      notes: "Secure and open space",
+      description: "Convince him and make him believe he can",
+      notes: "I may have to muscle him to do it",
       completed: false,
     },
     {
-      user_id: 7,
+      project_id: 7,
 
-      descriptions: "Best marketing plots",
-      notes: "must be charming and can communicate",
+      description: "Conduct a sneaker garage sales for sneaker heads like me",
+      notes: "Have to be charming funny",
       completed: false,
     },
   ];

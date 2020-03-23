@@ -3,46 +3,52 @@ exports.seed = async function(knex) {
 
   const seedingData = [
     {
-      name: " Web-Dev",
-      descriptions:
+      id: 1,
+      project_name: " Web-Dev",
+      description:
         "Start a small web-development business also know as start up",
       completed: false,
     },
     {
-      name: "Hire full stack engineer ",
-      descriptions: "Hire web-development engineers",
+      id: 2,
+      project_name: "Deploy my first application ",
+      description: "Build a app from scratch and deploy it",
       completed: false,
     },
     {
-      name: "Secure an office near a tech location",
-      descriptions: "the project description",
+      id: 3,
+      project_name: "Secure an office near a tech location",
+      description: "An office for the Web Dev business",
       completed: false,
     },
     {
-      name: "Out-reach to clients ",
-      descriptions: "Produce our first application or secure our first client",
+      id: 4,
+      project_name: "Choose a name for the business ",
+      description: "Register a business name ",
       completed: false,
     },
     {
-      name: "Go LLC",
-      descriptions: "Adopt a Business name an marketing Strategy",
+      id: 5,
+      project_name: "Make a proposal to some Developers",
+      description: "Share my dream and idea with some developers",
       completed: false,
     },
     {
-      name: "Business is Booming",
-      descriptions:
-        "Keep expanding and research on latest technology and techniques",
+      id: 6,
+      project_name: "Teach my son how to ride Bicycle",
+      description: "He's scare to learn but I have to push him",
       completed: false,
     },
     {
-      name: "Marketing",
-      descriptions:
-        "Hire professionals marketer, establish a marketing strategy with the team",
+      id: 7,
+      project_name: "Garage Sales",
+      description:
+        "Too much shoes, create space by disposing some via garage sales",
       completed: false,
     },
   ];
 
-  await knex("project").truncate();
+  await knex("projects").truncate();
 
-  return knex("project").insert(seedingData);
+  return knex("projects").insert(seedingData);
 };
